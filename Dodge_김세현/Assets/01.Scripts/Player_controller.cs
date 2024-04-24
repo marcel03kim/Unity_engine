@@ -6,12 +6,8 @@ public class Player_controller : MonoBehaviour
 {
     public Rigidbody player_rigidbody;          //이동에 사용할 리지드바디 컴포넌트
     public float speed = 8f;                    //이동속력
-    int test;
-   
-    private void Awake()
-    {
-        
-    }
+    public GameObject Fail;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +35,6 @@ public class Player_controller : MonoBehaviour
     {
         //자신의 게임 오브젝트를 비활성화
         gameObject.SetActive(false);
+        Fail.GetComponent<GameManager>().EndGame();
     }
 }
