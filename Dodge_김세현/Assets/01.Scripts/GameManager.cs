@@ -24,16 +24,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(Keycode.Esc))
+        {
+            SceneManager.LoadScene("PauseScene");
+        }
         if (!isGameover)
         {
-            surviveTime += Time.deltaTime;
-            timeText.text = "Time : " + (int) surviveTime;
+            SceneManager.LoadScene("MainScene");
         }
         else
         {
             if(Input.GetKeyDown(KeyCode.R)) 
             {
-                SceneManager.LoadScene("Dodge_scene");
+                SceneManager.LoadScene("GameScene");
             }
         }
     }
