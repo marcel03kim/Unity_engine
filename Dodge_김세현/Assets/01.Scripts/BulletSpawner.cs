@@ -12,13 +12,15 @@ public class BulletSpawner : MonoBehaviour
     private float spawnRate;
     private float timeAfterSpawn;
 
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         timeAfterSpawn = 0f;
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
         target = FindObjectOfType<Player_controller>().transform;
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class BulletSpawner : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bullet.transform.LookAt(target);
             spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+
+            audioSource.Play();
         }
     }
 }

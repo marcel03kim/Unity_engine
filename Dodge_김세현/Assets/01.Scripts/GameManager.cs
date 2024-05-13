@@ -14,11 +14,15 @@ public class GameManager : MonoBehaviour
 
     private float surviveTime;
     private bool isGameover;
+
+    AudioSource gameOverAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         surviveTime = 0;
         isGameover = false;
+        gameOverAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class GameManager : MonoBehaviour
         {
             surviveTime += Time.deltaTime;
             timeText.text = "Time : " + (int) surviveTime;
+            gameoverText.SetActive(false);
         }
         else
         {
@@ -40,6 +45,7 @@ public class GameManager : MonoBehaviour
     
     public void EndGame()
     {
+        gameOverAudioSource.Play();
         isGameover = true;
         gameoverText.SetActive(true);
         //BestTime 키로 저장 된 이전까지의 최고 기록을 가져오기

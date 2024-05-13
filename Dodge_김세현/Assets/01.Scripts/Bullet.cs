@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
         // 리지드바디의 속도 = 오브젝트의 기준으로 앞쪽 방향 * 이동속력
         bulletRigidbody.velocity = transform.forward * speed;   
 
+
         //3초 뒤에 자신의 게임 오브젝트 파괴
         Destroy(gameObject, 3f);
     }
@@ -25,6 +26,8 @@ public class Bullet : MonoBehaviour
         //충돌한 상대방 게임 오브젝트가 Player 태그를 가진 경우
         if(other.tag == "Player")
         {
+
+            gameObject.SetActive(false);
             //상대방 게임 오브젝트에서 Player_controller 컴포넌트 가져오기
             Player_controller player_Controller = other.GetComponent<Player_controller>();
 
@@ -35,5 +38,9 @@ public class Bullet : MonoBehaviour
                 player_Controller.Die();
             }
         } 
+        else if (other.tag == "wall")
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
