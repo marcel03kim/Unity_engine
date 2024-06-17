@@ -428,6 +428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1496761931941770, guid: 63226789a2ac34fec8493b064c47bd44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114186528587364174, guid: 63226789a2ac34fec8493b064c47bd44,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -569,7 +573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -1213,7 +1217,7 @@ MonoBehaviour:
   fireTransform: {fileID: 1034471296}
   muzzleFlashEffect: {fileID: 1454269620}
   shellEjectEffect: {fileID: 1239040687}
-  gunData: {fileID: 0}
+  gunData: {fileID: 11400000, guid: 7e1dc2ae425358f46a1ce488dbb8dca8, type: 2}
   ammoRemain: 100
   magAmmo: 0
 --- !u!1001 &1406950734
@@ -1636,6 +1640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902150675582859792, guid: 7751d7ee73fad9f4fbb7518071894081,
+        type: 3}
+      propertyPath: whatIsTarget.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
